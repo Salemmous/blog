@@ -1,24 +1,46 @@
 {{ define "main" }}
 
 <div class="ph3 bg-off-white">
-	<div class="center mw6 pv3">
+    <div class="center mw6 pv3">
+        <img src="{{ .Params.logo }}" alt="" class="db w4 center pv4" />
 
-		<img src="{{ .Params.logo }}" alt="" class="db w4 center pv4">
+        {{ .Content }}
 
-		{{ .Content }}
+        <h3 class="f4 b lh-title mb2">Contact me</h3>
 
-		<div class="flex-ns mb3">
-	        	{{ range .Params.contact_entries }}
-				<div>
-					<h4 class="f4 b lh-title mb2 primary">{{ .heading }}</h4>
-					<p>{{ .text }}</p>
-				</div>
-			{{ end }}
-		</div>
+        <table class="mt4">
+            <tr>
+                <td class="pr4">Email</td>
+                <td>
+                    <a
+                        href="mailto:thomas.debluts@gmail.com"
+                        class="text-steel-500 dark:text-steel-200"
+                    >
+                        thomas.debluts@gmail.com
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="pr4">Phone</td>
+                <td>
+                    <a href="tel:+358449496579"> +358 44 9496579 </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ partial "social-icon" (dict "link"
+                    "https://www.linkedin.com/in/thomas-de-bluts-296a74131/"
+                    "svg" "icons-linkedin") }}
+                </td>
+                <td>
+                    {{ partial "social-icon" (dict "link"
+                    "https://github.com/Salemmous" "svg" "icons-github") }}
+                </td>
+            </tr>
+        </table>
 
-		{{ partial "contact-form" . }}
-
-	</div>
+        <!-- {{ partial "contact-form" . }} -->
+    </div>
 </div>
 
 {{ end }}
