@@ -6,7 +6,7 @@
 
 {{ partial "2-up" .Params }}
 
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
+{{ partial "skill-highlight" (dict "name" .Params.skills.name "description" .Params.skills.description "buttonText" "Read more" "buttonLink" "/skills") }}
 
 {{ partial "blog" . }}
 
